@@ -120,6 +120,14 @@ Allocation of requirements across components or increments. Map major requiremen
 
 ![][image1]
 
+| Task | Developers | Project Manager | Quality Assurance | UX | DevOps | Business Analysts | Product Owner | Subject Matter Expert |
+| :---- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Requirements** | **I** | **A** | **I** | **C** | **I** | **R** | **A** | **C** |
+| **Design** | **C** | **A** | **I** | **R** | **I** | **C** | **A** | **C** |
+| **Implementation** | **R** | **A** | **I** | **C** | **C** | **I** | **I** | **C** |
+| **Testing** | **C** | **A** | **R** | **I** | **I** | **C** | **I** | **I** |
+| **Deployment** | **C** | **A** | **C** | **I** | **R** | **I** | **I** | **I** |
+
 ## **3\. Requirements**
 
 This section specifies verifiable requirements of the software product to enable design and testing. State requirements to a level of detail sufficient for design and verification.
@@ -466,6 +474,8 @@ Ability to run on multiple platforms or environments with minimal changes.
 
 Financial considerations or cost targets. 
 
+**Resource Plan**
+
 | Role | Name | FTE % | Estimated Hours | Hourly Rate | Cost |
 | :---- | :---- | ----- | ----: | ----: | ----: |
 | Project Manager | Alice S. | 50% | 320 | \$100 | \$32,000 |
@@ -478,7 +488,29 @@ Financial considerations or cost targets.
 | Subject Matter Expert | Ian V. | 10% | 40 | \$120 | \$4,800 |
 | **Total Labor** |  |  | **2240** | \$755.00 | **\$199,200.00** |
 
-**3.5.8 Deadline**
+**Cost Plan**
+
+| Item | Category | Qty/Months | Unit Cost | Duration (months) | Total | Notes |
+| :---- | :---- | ----- | ----- | ----- | ----: | :---- |
+| Project Labor | Labor | 1 | \$199,200 | 4 | \$199,200 | Full labor cost from Resource Plan covering the 4-month timeline. |
+| Cloud Hosting & DB | Infrastructure | 1 | \$2,000 | 4 | \$8,000 | Server provisioning, storage setup, and primary database with read-replicas. |
+| Mapping & Payment APIs | Licenses/Tools | 1 | \$600 | 4 | \$2,400 | Required for Google Maps/Apple Maps API tokens and tokenized payment integrations. |
+| Dev & Incident Tools | Licenses/Tools | 1 | \$400 | 4 | \$1,600 | CI/CD automation software and PagerDuty integration for latency alerts. |
+| **Subtotal** |  |  |  |  | **\$211,200** |  |
+| Contingency Reserve | Reserve | 10% |  |  | \$21,120 | 10% contingency applied to the subtotal to cover unbudgeted overruns. |
+| **Total Project Cost** |  |  |  |  | **\$232,320** |  |
+
+**Cashflow Table**
+
+| Month | Labor | Infra | Licenses | Contingency | Total |
+| ----- | ----: | ----: | ----: | ----: | ----: |
+| September 2026 | \$30,000 | \$2,000 | \$1,000 | \$3,300 | \$36,300 |
+| October 2026 | \$60,000 | \$2,000 | \$1,000 | \$6,300 | \$69,300 |
+| November 2026 | \$80,000 | \$2,000 | \$1,000 | \$8,300 | \$91,300 |
+| December 2026 | \$29,200 | \$2,000 | \$1,000 | \$3,220 | \$35,420 |
+| **Total** | **\$199,200.00** | **\$8,000.00** | **\$4,000.00** | **\$21,120.00** | **\$232,320.00** |
+
+#### **3.5.8 Deadline**
 
 Schedule expectations that affect scope and prioritization. Specify key milestones, delivery dates, or phases/increments. Indicate dependencies between milestones and required readiness criteria.
 
@@ -719,6 +751,7 @@ I used Gemini to help brainstorm a 16-entry Risk Register for the Smart Parking 
 * "Do everything"  
 * "\[Pasted examples of REQ-FUNC-001, REQ-FUNC-002, REQ-FUNC-003\] do the rest of the user stories in this format"  
 * "Where should ai\_use be on the srs document?"  
+* "Where do i place all four tables in the srs?"  
 4. **What I kept vs. what I changed:**  
 * **Verbatim / Kept:** I kept the requirement statements (REQ-FUNC-004 through REQ-FUNC-029 and the various REQ-SEC/REQ-PERF constraints) as the AI formatted them from my user stories. I also kept the new definitions provided for the Glossary.  
 * **Modified:** I manually modified Software-Corp SRS, making sure all the tables, Markdown formatting, and red placeholder text for images were aligned correctly. I also updated the Risk Register owner columns and user personas manually to resolve the discrepancies the AI initially pointed out.  
